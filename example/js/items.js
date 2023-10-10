@@ -297,19 +297,23 @@ $(document).ready(function() {
   }
 ];
 
-
+  $.get("templates/object-text.html", function(html_string) {
+    
+  },'html');
 
   // $("#items-wrapper").load('itemsSection.html');
   var itemsAccordion = $("#itemsAccordion");
 
-  for(section of sections) {
-    var sectionHtml = '<div class="accordion-item">\n'+
-    '            <h2 class="accordion-header" id="headingOne">\n'+
-    '            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">\n'+
+  for(let i = 0; i < sections.length; i++) {
+    let section = sections[i];
+    let sectionId = 'section' + i;
+    var sectionHtml = '<div class="accordion-item" ">\n'+
+    '            <h2 class="accordion-header" id=heading"' + i +'">\n'+
+    '            <button class="accordion-button" style="background-color:white;border-color:white;box-shadow:none;" type="button" data-bs-toggle="collapse" data-bs-target="#collapse' + i + '" aria-expanded="false" aria-controls="collapse' + i + '">\n'+
      '<span class="accordion-title">' + section.sectionName + '</span>\n'+
     '            </button>\n'+
     '            </h2>\n'+
-    '            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">\n'+
+    '            <div id="collapse' + i + '" class="accordion-collapse collapse" aria-labelledby="heading' + i + '" data-bs-parent="#itemsAccordion">\n'+
     '            <div class="accordion-body">\n';
 
     if(section.items.length > 0) {
