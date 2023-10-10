@@ -1,11 +1,12 @@
 .accordion-title {
   color: #000;
   font-family: Open Sans Hebrew;
-  font-size: 20px;
+  font-size: 15px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
+
 
 .item-card {
   width:100px;
@@ -18,4 +19,17 @@
   height: inherit;
   width: 99%;
   border-radius: 20px;
+}
+
+.scroll-container {
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: hsl(0 0% 50%);
+  height: 750px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 0px!important;
+  padding-right: 0px!important;
+  margin-right: 10px;
+  /* postcss-scrollbar will add the -webkit version automatically! */
 }
